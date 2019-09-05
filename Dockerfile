@@ -1,4 +1,4 @@
-FROM alphine:latest
+FROM jnewland/git-and-stuff
 
 LABEL "version"="0.0.1"
 LABEL "repository"="https://github.com/ShaunLWM/action-join"
