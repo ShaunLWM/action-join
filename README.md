@@ -1,5 +1,7 @@
 # Join Notifications for GitHub Actions
 
+![screenshot](screenshot.png)
+
 This action allows you to send yourself a push notification via [Join](https://play.google.com/store/apps/details?id=com.joaomgcd.join).
 
 ## Usage
@@ -34,7 +36,9 @@ You'll need to provide these environment variables to specify exactly what infor
 [Learn more](https://joaoapps.com/join/api/) about the required parameters and the keys above.
 
 ## Credits
+
 Based off [maddox/actions](https://github.com/maddox/actions/blob/master/pushover/entrypoint.sh)
+
 ## License
 
 MIT 2019
