@@ -1,6 +1,6 @@
 FROM appropriate/curl:latest
 
-LABEL "version"="0.0.1"
+LABEL "version"="0.0.2"
 LABEL "repository"="https://github.com/ShaunLWM/action-join"
 LABEL "maintainer"="ShaunLWM"
 
