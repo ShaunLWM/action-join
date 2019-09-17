@@ -11,33 +11,52 @@ To use the action simply add the following lines to your `.github/main.workflow`
 ```
 action "Build Completion" {
   uses = "ShaunLWM/action-join@master"
-  secrets = ["DEVICE_ID", "API_KEY"]
+  secrets = ["JOIN_DEVICE_ID", "JOIN_API_KEY"]
   env = {
-    TITLE = "Build Complete"
-    TEXT = "Your project has been built."
+    JOIN_TITLE = "Build Complete"
+    JOIN_TEXT = "Your project has been built."
   }
 }
 ```
 
+#### YML
+```
+on: push
+name: New workflow
+jobs:
+  buildCompletion:
+    name: Build Completion
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build Completion
+      uses: ShaunLWM/action-join@master
+      env:
+        JOIN_API_KEY: ${{ secrets.JOIN_API_KEY }}
+        JOIN_DEVICE_ID: ${{ secrets.JOIN_DEVICE_ID }}
+        JOIN_TEXT: Your project has been built.
+        JOIN_TITLE: Build Complete
+```
+
 ### Secrets
 
-You'll need to provide these secrets to use the action.
+You'll need to provide these secrets to use the action. Enter these secrets in your Settings > Secrets
 
-* **DEVICE_ID**: Select your device from [Join](https://joinjoaomgcd.appspot.com/) and copy the `Device Id` under `Join API`
-* **API_KEY**: Similarly, in `Join API`, click `Show` at API Key section.
+* **JOIN_DEVICE_ID**: Select your device from [Join](https://joinjoaomgcd.appspot.com/) and copy the `Device Id` under `Join API`
+* **JOIN_API_KEY**: Similarly, in `Join API`, click `Show` at API Key section.
 
 ### Environment Variables
 
 You'll need to provide these environment variables to specify exactly what information to send to your device.
 
-* **TITLE**: The title of the notification.
-* **TEXT**: The body of the notification.
+* **JOIN_TITLE**: The title of the notification.
+* **JOIN_TEXT**: The body of the notification.
 
 [Learn more](https://joaoapps.com/join/api/) about the required parameters and the keys above.
 
 ## Credits
 
-Based off [maddox/actions](https://github.com/maddox/actions/blob/master/pushover/entrypoint.sh)
+Based off [maddox/actions](https://github.com/maddox/actions/tree/master/pushover)
 
 ## License
 
