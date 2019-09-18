@@ -21,15 +21,14 @@ action "Build Completion" {
 
 #### YML
 ```
-on: push
-name: New workflow
+name: Join Notification to Device X
+on: [push]
 jobs:
-  buildCompletion:
-    name: Build Completion
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Build Completion
+    - name: Join Notification
       uses: ShaunLWM/action-join@master
       env:
         JOIN_API_KEY: ${{ secrets.JOIN_API_KEY }}

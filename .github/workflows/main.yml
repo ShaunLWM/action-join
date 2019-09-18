@@ -1,5 +1,5 @@
-name: Workflow #1
-on: push
+name: Join Notification to Device X
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,5 +10,5 @@ jobs:
       env:
         JOIN_API_KEY: ${{ secrets.JOIN_API_KEY }}
         JOIN_DEVICE_ID: ${{ secrets.JOIN_DEVICE_ID }}
-        JOIN_TEXT: action-join has been built.
+        JOIN_TEXT: action-join compiled successfully
         JOIN_TITLE: Build Complete
