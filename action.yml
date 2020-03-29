@@ -1,5 +1,5 @@
 name: "action-join"
-description: "A Github action to push Join notifications to your devices."
+description: "A Github action to push Join notifications to your devices"
 author: "ShaunLWM"
 branding:
   icon: "send"
