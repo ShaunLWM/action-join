@@ -1,0 +1,16 @@
+name: "action-join"
+description: "A Github action to push Join notifications to your devices."
+author: "ShaunLWM"
+branding:
+  icon: "send"
+  color: "blue"
+inputs:
+  JOIN_TITLE:
+    description: "The title of the notification"
+    required: true
+  JOIN_TEXT:
+    description: "The body of the notification"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
